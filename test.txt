@@ -1,0 +1,5 @@
+roject public-facing name - 'project-914649742526'
+comet chat
+APP ID: 20784507bc6a493b Region: usVersion: v3.0 
+
+Auth Key:  9658d780f62a8ac50c300d065aaae7300c17e5ab
