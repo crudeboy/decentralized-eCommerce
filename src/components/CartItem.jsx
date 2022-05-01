@@ -4,6 +4,7 @@ import CardStatusFooter from '@material-tailwind/react/CardStatusFooter'
 import { Link } from 'react-router-dom'
 import { Image, Button } from '@material-tailwind/react'
 import { setGlobalState, useGlobalState } from '../store'
+import '@material-tailwind/react/tailwind.css'
 
 const CartItem = ({ item }) => {
   const [qty, setQty] = useState(item.qty)

@@ -5,6 +5,7 @@ import { Button, CardImage } from '@material-tailwind/react'
 import { getProduct, deleteProduct, auth } from '../firebase'
 import { setGlobalState, useGlobalState, setAlert } from '../store'
 import { payWithEthers } from '../shared/Freshers'
+import '@material-tailwind/react/tailwind.css'
 
 const Product = () => {
   const { id } = useParams()

@@ -12,6 +12,7 @@ import NavbarToggler from '@material-tailwind/react/NavbarToggler'
 import NavbarCollapse from '@material-tailwind/react/NavbarCollapse'
 import Nav from '@material-tailwind/react/Nav'
 import NavItem from '@material-tailwind/react/NavItem'
+import '@material-tailwind/react/tailwind.css'
 
 const Header = () => {
   const [openNavbar, setOpenNavbar] = useState(false)

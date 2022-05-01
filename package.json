@@ -1,5 +1,5 @@
 {
-  "name": "y",
+  "name": "freshers",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -9,9 +9,9 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@cometchat-pro/chat": "^3.0.6",
-    "@material-tailwind/react": "^0.3.4",
-    "firebase": "^9.6.11",
+    "@cometchat-pro/chat": "3.0.6",
+    "@material-tailwind/react": "0.3.4",
+    "firebase": "^9.6.8",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hooks-global-state": "^1.0.2",
@@ -19,7 +19,7 @@
     "react-scripts": "4.0.3"
   },
   "devDependencies": {
-    "@truffle/hdwallet-provider": "^2.0.6",
+    "@truffle/hdwallet-provider": "^2.0.4",
     "@vitejs/plugin-react": "^1.0.7",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -48,10 +48,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "Speedily develope your decentralized application with this starter kit for free!",
-  "main": "truffle-config.js",
-  "directories": {
-    "test": "test"
   }
 }

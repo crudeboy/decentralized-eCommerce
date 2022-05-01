@@ -47,9 +47,8 @@ const loadWeb3 = async () => {
   try {
     if (!ethereum) return alert('Please install Metamask')
 
+    window.web3 = new Web3(ethereum)
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
-    console.log(accounts, "accounts")
-
     setGlobalState('connectedAccount', accounts[0])
   } catch (error) {
     alert('Please connect your metamask wallet!')

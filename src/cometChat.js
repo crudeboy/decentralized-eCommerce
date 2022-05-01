@@ -15,6 +15,7 @@ const initCometChat = async () => {
 
     await CometChat.init(appID, appSetting).then(() => console.log('Initialization completed successfully'))
   } catch (error) {
+    console.log("na here i dey ooo")
     console.log(error)
   }
 }

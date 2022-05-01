@@ -3,6 +3,7 @@ import { sendMessage, getMessages } from '../cometChat'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../components/Header'
+import '@material-tailwind/react/tailwind.css'
 
 const Chat = () => {
   const { receiverID } = useParams()

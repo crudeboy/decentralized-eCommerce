@@ -1,4 +1,5 @@
 import Food from './Food'
+import '@material-tailwind/react/tailwind.css'
 
 const Foods = ({ products }) => {
   return (

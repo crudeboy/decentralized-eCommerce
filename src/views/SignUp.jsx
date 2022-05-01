@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Register from '../components/Register'
+import '@material-tailwind/react/tailwind.css'
 
 const SignUp = () => {
   return (

@@ -5,6 +5,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom'
 import { updateProduct, getProduct, auth } from '../firebase'
 import { setAlert } from '../store'
 import { useGlobalState } from '../store'
+import '@material-tailwind/react/tailwind.css'
 
 const EditProduct = () => {
   const { id } = useParams()

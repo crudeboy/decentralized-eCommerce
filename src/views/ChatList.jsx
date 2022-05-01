@@ -3,6 +3,7 @@ import { getConversations } from '../cometChat'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { auth } from '../firebase'
+import '@material-tailwind/react/tailwind.css'
 
 const ChatList = () => {
   const [customers, setCustomers] = useState([])
@@ -25,7 +26,7 @@ const ChatList = () => {
             <div className='flex items-start justify-between my-4'>
               <h3 className='text-md font-semibold'>Recent Chats</h3>
             </div>
-            {loaded ? customers.map((customer, i) => <Conversation key={i} currentUser={auth.currentUser.uid.toLowerCase()} owner={customer.lastMessage.receiverId.toLowerCase()} conversation={customer.lastMessage} />) : null}
+            {loaded && customers ? customers.map((customer, i) => <Conversation key={i} currentUser={auth.currentUser.uid.toLowerCase()} owner={customer.lastMessage.receiverId.toLowerCase()} conversation={customer.lastMessage} />) : null}
           </div>
         </div>
       </div>

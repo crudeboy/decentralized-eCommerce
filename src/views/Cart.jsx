@@ -5,6 +5,7 @@ import { Button } from '@material-tailwind/react'
 import { useEffect, useState } from 'react'
 import { addToOrders } from '../firebase'
 import { setAlert, setGlobalState, useGlobalState } from '../store'
+import '@material-tailwind/react/tailwind.css'
 
 const Cart = () => {
   const [cart] = useGlobalState('cart')

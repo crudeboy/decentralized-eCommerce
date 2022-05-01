@@ -1,20 +1,19 @@
-require('dotenv').config();
 import { initializeApp } from 'firebase/app'
 import { setAlert } from './store'
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth'
-import { getFirestore, query, getDocs, updateDoc, collection, collectionGroup, orderBy, deleteDoc, addDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore'
 
+import { getFirestore, query, getDocs, updateDoc, collection, collectionGroup, orderBy, deleteDoc, addDoc, doc, setDoc, serverTimestamp } from 'firebase/firestore'
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-console.log(process.env.REACT_APP_FIREBASE_APP_ID, 'api key')
-const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
-}
+// console.log(process.env.REACT_APP_FIREBASE_APP_ID, 'api key')
+// const firebaseConfig = {
+//   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+//   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+//   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+//   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+//   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+//   appId: process.env.REACT_APP_FIREBASE_APP_ID,
+//   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+// }
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
@@ -30,10 +29,7 @@ const logInWithEmailAndPassword = async (email, password) => {
 
 const registerWithEmailAndPassword = async (email, password, fullname, phone, account, address) => {
   try {
-    console.log("i got to the firebase file")
-    console.log(email, "email", password, "password", auth, "auth")
     const res = await createUserWithEmailAndPassword(auth, email, password)
-    console.log(res, "res")
     const user = res.user
     const userDocRef = doc(db, 'users', user.email)
 
@@ -98,6 +94,7 @@ const getProducts = async () => {
   try {
     const products = query(collectionGroup(db, 'products'), orderBy('timestamp', 'desc'))
     const snapshot = await getDocs(products)
+    collection.log('i got to the get products', products, 'products')
 
     return snapshot.docs.map((doc) => ({
       id: doc.id,
@@ -144,4 +141,3 @@ const deleteProduct = async (product) => {
 }
 
 export { auth, db, logInWithEmailAndPassword, registerWithEmailAndPassword, logout, onAuthStateChanged, addProduct, addToOrders, getProducts, getProduct, updateProduct, deleteProduct }
-// export { auth, db, logInWithEmailAndPassword, registerWithEmailAndPassword, logout, onAuthStateChanged, addProduct, addToOrders, deleteProduct }

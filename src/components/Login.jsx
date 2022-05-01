@@ -14,7 +14,9 @@ const Login = () => {
     e.preventDefault()
     if (email == '' || password == '') return ///
     logInWithEmailAndPassword(email, password).then((user) => {
+      console.log(user, "user");
       if (user) {
+        console.log(user, "user")
         loginWithCometChat(user.uid).then(() => {
           resetForm()
           setAlert('Logged in successfully')

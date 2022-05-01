@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { registerWithEmailAndPassword, logout } from '../firebase'
 import { signInWithCometChat } from '../cometChat'
 import { setAlert } from '../store'
+import '@material-tailwind/react/tailwind.css'
 
 const Register = () => {
   const [fullname, setFullname] = useState('')

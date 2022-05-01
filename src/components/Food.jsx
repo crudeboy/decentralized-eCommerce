@@ -8,6 +8,7 @@ import Paragraph from '@material-tailwind/react/Paragraph'
 import Button from '@material-tailwind/react/Button'
 import { setAlert, setGlobalState, useGlobalState } from '../store'
 import { Link } from 'react-router-dom'
+import '@material-tailwind/react/tailwind.css'
 
 const Food = ({ item }) => {
   const [cart] = useGlobalState('cart')
